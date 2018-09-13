@@ -1,6 +1,6 @@
 # Elasticms Docker
 
-Docker-compose setup for elasticms
+Docker-compose setup for [elasticms](https://github.com/ems-project/elasticms) project.
 
 ## Getting Started
 
