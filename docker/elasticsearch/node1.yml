@@ -1,0 +1,4 @@
+node.name: es01
+cluster.name: docker-cluster
+network.host: 0.0.0.0
+bootstrap.memory_lock: true
