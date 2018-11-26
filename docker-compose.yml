@@ -20,7 +20,6 @@ services:
     container_name: elasticsearch2
     environment:
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-#      - "discovery.zen.ping.unicast.hosts=elasticsearch1"
     ulimits:
       memlock:
         soft: -1
@@ -59,7 +58,7 @@ services:
     working_dir: /application
     volumes:
     - ./src:/application
-    - ./docker/php-fpm/php-ini-overrides.ini:/etc/php/7.1/fpm/conf.d/99-overrides.ini
+    - ./docker/php-fpm/php-ini-overrides.ini:/etc/php/7.2/fpm/conf.d/99-overrides.ini
 
   db:
     image: postgres:9.6-alpine
@@ -68,6 +67,8 @@ services:
     volumes:
     - ems_db:/var/lib/postgresql/data
     - .:/application
+    ports:
+    - "5433:5432"
     environment:
     - POSTGRES_USER=admin
     - POSTGRES_PASSWORD=admin
